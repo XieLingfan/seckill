@@ -1,0 +1,39 @@
+syntax = "proto3";
+package user_srv;
+
+service AdminUser{
+  rpc AdminUserLogin(AdminUserRequest) returns (AdminUserRespond){}
+  rpc FrontUserList(FrontUsersRequest) returns (FrontUsersRespond){}
+}
+
+message FrontUsersRequest{
+  int32 current_page = 1;
+  int32 page_size = 2;
+}
+
+message FrontUsersRespond{
+  int32 code = 1;
+  string msg = 2;
+  repeated FrontUser front_users = 3;
+  int32 total = 4;
+  int32 current_page = 5;
+  int32 page_size = 6;
+}
+
+message FrontUser{
+  string email = 1;
+  string desc = 2;
+  string status = 3;
+  string create_time = 4;
+}
+
+message AdminUserRequest{
+  string username = 1;
+  string password = 2;
+}
+
+message AdminUserRespond{
+  int32 code = 1;
+  string msg = 2;
+  string username = 3;
+}

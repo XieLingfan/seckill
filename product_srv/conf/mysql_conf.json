@@ -1,0 +1,8 @@
+{
+  "host":"81.68.142.83",
+  "port":"3306",
+  "user_name":"root",
+  "password":"root",
+  "database":"micro_seckill",
+  "logo_mode":true
+}
